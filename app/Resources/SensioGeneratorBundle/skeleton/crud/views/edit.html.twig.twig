@@ -1,0 +1,18 @@
+{% block extends %}
+{{ "{% extends 'AppBundle::layout.html.twig' %}" }}
+{% endblock extends %}
+
+{% block body %}
+{{ "{% block title %}" ~ "{{ 'base.crud.edit.title' | trans({'%entity%': '" ~ entity ~ "'}) }}" ~ "{% endblock %}" }}
+
+{{ "{% block body %}" }}
+
+    {{ '{{ form_start(edit_form) }}' }}
+        {{ '{{ form_widget(edit_form) }}' }}
+        <input type="submit" value="{{ "{{ 'base.crud.button.update' | trans }}" }}" class="btn btn-primary"/>
+    {{ '{{ form_end(edit_form) }}' }}
+
+{% set hide_edit, hide_delete = true, false %}
+{{ include('crud/views/others/record_actions.html.twig.twig') -}}
+{{ "{% endblock %}" }}
+{% endblock body %}

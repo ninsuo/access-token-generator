@@ -1,0 +1,108 @@
+{# BaseBundle::minimal.html.twig #}
+
+<!DOCTYPE html>
+<html lang="{{ current_locale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{ include('BraincraftedBootstrapBundle::ie8-support.html.twig') }}
+
+        {% set brand = fuz.site.brand %}
+        {% set title = brand ~ ' - ' ~ fuz.site.title|trans %}
+        {% set description = fuz.site.description|trans %}
+        {% set keywords = fuz.site.keywords|trans %}
+        {% set author = fuz.site.author %}
+        {% set url = current_uri() %}
+        {% set picture = absolute_url(asset('image.jpeg')) %}
+        {% set icon = absolute_url(asset('favicon.ico')) %}
+        {% set logo = absolute_url(asset('apple-touch-icon.png')) %}
+
+        {% block seo %}
+            <title>{% block meta_title %}{% block title %}{{ title }}{% endblock %}{% endblock %}</title>
+            <meta name="description" content="{% block meta_description %}{% block description %}{{ description }}{% endblock %}{% endblock %}">
+            <meta name="keywords" content="{% block meta_keywords %}{% block keywords %}{{ keywords }}{% endblock %}{% endblock %}">
+            <meta name="author" content="{% block meta_author %}{% block author %}{{ author }}{% endblock %}{% endblock %}">
+            <link rel="icon" href="{% block icon %}{{ icon }}{% endblock %}" type="image/x-icon"/>
+            <link rel="aimage_src" href="{% block picture %}{{ picture }}{% endblock %}"/>
+            <link rel="apple-touch-icon" href="{% block logo %}{{ logo }}{% endblock %}"/>
+
+            <meta property="og:site_name" content="{{ block('title') }}"/>
+            <meta property="og:url" content="{% block url %}{{ url }}{% endblock %}"/>
+            <meta property="og:type" content="{% block type %}website{% endblock %}"/>
+            <meta property="og:title" content="{{ block('title') }}"/>
+            <meta property="og:description" content="{{ block('description') }}"/>
+            <meta property="og:image" content="{{ block('picture') }}"/>
+
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:title" content="{{ block('title') }}">
+            <meta name="twitter:description" content="{{ block('description') }}">
+            <meta name="twitter:image:src" content="{{ block('picture') }}">
+
+            <meta itemprop="name" content="{{ block('title') }}">
+            <meta itemprop="description" content="{{ block('description') }}">
+            <meta itemprop="image" content="{{ block('picture') }}">
+        {% endblock %}
+
+        {% block css %}
+
+            {% stylesheets filter="scssphp" output="css/base.css"
+                "css/bootstrap.css"
+                "bundles/base/jquery-ui-1.11.2/jquery-ui.min.css"
+                "bundles/base/bootstrap-submenu/css/bootstrap-submenu.min.css"
+                "bundles/base/css/emojione.min.css"
+                "bundles/base/css/highlight.min.css"
+                "bundles/base/css/bootstrap-toggle.min.css"
+                "bundles/base/css/base.css"
+                "bundles/app/css/app.css"
+            %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+
+        {% endblock %}
+
+    </head>
+    <body>
+        <div class="container">
+            {% block body_head %}{% endblock %}
+            <div id="body">
+                {% block flash %}{{ include('BraincraftedBootstrapBundle::flash.html.twig', {'close': true}) }}{% endblock %}
+                {% block body_title %}{% endblock %}
+                {% block body %}{% endblock %}
+            </div>
+            {% block body_bottom %}{% endblock %}
+        </div>
+
+        {# Ajax-loader gif #}
+        <div id="wait" class="hide" aria-hidden="true">
+            {% block wait %}
+                <div class="text-center">
+                    <img src="{{ asset('bundles/base/img/wait.gif') }}" alt="{{ 'base.wait'|trans }}"/>
+                </div>
+            {% endblock %}
+        </div>
+
+        {% block js %}
+            {% javascripts filter="?jsqueeze" output="js/base.js"
+                "js/jquery.js"
+                "js/bootstrap.js"
+                "js/jquery.collection.js"
+                "bundles/base/jquery-ui-1.11.2/jquery-ui.min.js"
+                "bundles/base/js/base.js"
+                "bundles/base/js/autosize.js"
+                "bundles/base/js/jquery.domajax.js"
+                "bundles/base/js/emojione.min.js"
+                "bundles/base/js/highlight.min.js"
+                "bundles/base/js/marked.js"
+                "bundles/base/js/bootstrap-toggle.min.js"
+                "bundles/base/bootstrap-submenu/js/bootstrap-submenu.min.js"
+                "bundles/app/js/app.js"
+            %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+
+        {% block script %}{% endblock %}
+    </body>
+</html>

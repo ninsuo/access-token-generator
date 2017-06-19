@@ -1,0 +1,3 @@
+app:
+    token: %provider% Access Token
+    other: Create another one

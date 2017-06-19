@@ -1,0 +1,16 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="text-center">
+    <img src="{{ asset('bundles/base/img/oauth/' ~ provider ~ '.png') }}" alt="{{ provider }}"/>
+    <div style="font-size:24px;">{{ 'app.token'|trans({'%provider%': provider|title}) }}</div>
+    <div style="font-size:28px;">{{ token }}</div>
+
+    <br/><br/><br/>
+    <a href="{{ path('logout') }}" class="btn btn-primary">{{ 'app.other'|trans }}</a>
+</div>
+
+{% endblock %}

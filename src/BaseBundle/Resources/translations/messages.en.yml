@@ -1,0 +1,92 @@
+base:
+    button:
+        add: 'Add'
+        back: 'Go back'
+        home: 'Go back to the homepage'
+        remove: 'Remove'
+        on: On
+        off: Off
+    changepassword:
+        title: 'Change password'
+    ckeditor:
+        confirm_remove: "Do you really want to remove %name% image?"
+        file_removed: "File have been successfully removed."
+        invalid_file: "Unable to load this file."
+        title: "Gallery"
+    crud:
+        action:
+            edit: Edit
+            show: Show
+            save: Save
+        back: 'Back to the list'
+        button:
+            create: Create
+            delete: Delete
+            update: Update
+        create:
+            success: 'Entry added successfully.'
+        delete:
+            success: 'Entry removed successfully.'
+        edit:
+            button: Edit
+            title: '%entity% update'
+        index:
+            actions: Actions
+            title: '%entity% list'
+        new:
+            button: 'Create a new entry'
+            title: '%entity% creation'
+        update:
+            success: 'Entry updated successfully.'
+    error:
+        403:
+            explain: 'You need to be logged-on or/and do not have the required privileges to access this resource.'
+            title: 'Permission denied'
+        404:
+            explain: 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.'
+            title: 'Page not found'
+        500:
+            explain: 'If you got to that page, this is because something crashed somewhere.'
+            title: 'It looks like something went wrong.'
+        back_sentence: 'Use the Back button, the navigation menu or click on the Home button to continue.'
+        registration_restriction: 'Your email %email% doesn''t match with the website restrictions.'
+    form:
+        duplicate_error: 'This %entry% already exist.'
+    locale:
+        title: Language
+    login:
+        as: 'Connected as'
+        email: 'E-Mail:'
+        resource_owners: 'Generate an access token for...'
+        using: '%provider%'
+    logout:
+        title: Logout
+    menu:
+        home: Home
+        admin:
+            main: Administration
+            users: Manage users
+            groups: Manage groups
+            permissions: Manage permissions
+    nav: 'Toggle navigation'
+    pager:
+        prev: '← Previous'
+        current: 'current'
+        next: 'Next →'
+        result: '{0} results | {1} result | ]1,Inf[ results'
+        per_page: 'Results per page:'
+        go_to: 'Go to page:'
+        go: 'Go'
+    search: Search...
+    share: 'Share:'
+    site:
+        description: 'An empty Symfony project that provides lots of ready-to-use tools for quick and not-so-dirty development'
+        keywords: 'symfony,framework,development,fast,tool,efficien,quick'
+        title: 'Write down your mind'
+    undefined: Undefined
+    unsuscribe:
+        confirm: Confirm
+        explain: 'All data associated with your account will be'
+        removed: removed
+        title: 'You are going to unsuscribe.'
+    wait: 'Please wait...'
