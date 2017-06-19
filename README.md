@@ -21,6 +21,10 @@ In order to get access tokens, you need to get your client ID and secret on enab
 - Twitter Login: https://apps.twitter.com/
 - Facebook Login: https://developers.facebook.com/apps/
 
+![home](doc/home.png)
+
+![home](doc/github.png)
+
 ## License
 
 - This project is released under the MIT license
