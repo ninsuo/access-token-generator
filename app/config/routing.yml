@@ -25,6 +25,9 @@ facebook_login:
 vkontakte_login:
     path: /login/check-vkontakte
 
+okta_login:
+    path: /login/check-okta
+
 base:
     resource: "@BaseBundle/Controller/"
     type:     "annotation"

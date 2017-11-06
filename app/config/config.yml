@@ -40,6 +40,7 @@ twig:
                 Twitter: "%twitter_enabled%"
                 Facebook: "%facebook_enabled%"
                 Vkontakte: "%vkontakte_enabled%"
+                Okta: "%okta_enabled%"
             site:
                 brand: "%site_brand%"
                 title: "%site_title%"
@@ -119,6 +120,21 @@ hwi_oauth:
             client_id: "%vkontakte_client_id%"
             client_secret: "%vkontakte_secret%"
             scope: "email"
+        okta:
+            type:              oauth2
+            client_id:         '%okta_client_id%'
+            client_secret:     '%okta_secret%'
+            access_token_url:  'https://blablacar.okta-emea.com/oauth2/default/v1/token'
+            authorization_url: 'https://blablacar.okta-emea.com/oauth2/default/v1/authorize'
+            infos_url:         'https://blablacar.okta-emea.com/oauth2/default/v1/userinfo'
+            scope:             'openid email profile'
+            options:
+                csrf:            true
+            user_response_class: HWI\Bundle\OAuthBundle\OAuth\Response\PathUserResponse
+            paths:
+                identifier: email
+                nickname:   email
+                realname:   email
 
 # Supported Website Languages
 jms_i18n_routing:

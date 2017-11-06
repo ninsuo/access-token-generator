@@ -24,6 +24,7 @@ security:
                     twitter: "/login/check-twitter"
                     facebook: "/login/check-facebook"
                     vkontakte: "/login/check-vkontakte"
+                    okta: "/login/check-okta"
                 login_path: "/login"
                 failure_path: "/login"
                 default_target_path: "/welcome"
