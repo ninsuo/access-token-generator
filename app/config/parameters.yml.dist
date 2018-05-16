@@ -50,6 +50,11 @@ parameters:
     facebook_client_id: <your client id>
     facebook_secret:    <your secret>
 
+    # Vkontakte Login:
+    vkontakte_enabled: true
+    vkontakte_client_id: <your client id>
+    vkontakte_secret:    <your secret>
+
     # Okta Login:
     okta_enabled: true
     okta_client_id: <your client id>
