@@ -82,8 +82,15 @@ braincrafted_bootstrap:
     auto_configure:
       knp_menu: false
 
+httplug:
+    clients:
+        hwi:
+            factory: 'httplug.factory.guzzle6'
+
 # HWIOAuthBundle Configuration
 hwi_oauth:
+    http:
+      client: httplug.client.hwi
     firewall_names: ["main"]
     resource_owners:
         github:
@@ -120,6 +127,9 @@ hwi_oauth:
             client_id: "%vkontakte_client_id%"
             client_secret: "%vkontakte_secret%"
             scope: "email"
+            options:
+                csrf: true
+                fields: "nickname,photo_medium,screen_name,email,sex,bdate"
         okta:
             type:              oauth2
             client_id:         '%okta_client_id%'

@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Exercise\HTMLPurifierBundle\ExerciseHTMLPurifierBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Symfony\Bundle\WebServerBundle\WebServerBundle,
+            new Http\HttplugBundle\HttplugBundle(),
             new BaseBundle\BaseBundle(),
             new AppBundle\AppBundle(),
             new AdminBundle\AdminBundle(),
